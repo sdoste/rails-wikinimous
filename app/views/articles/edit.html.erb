@@ -1,0 +1,12 @@
+<p class="header"><%= link_to 'Wikinimous', articles_path %></p>
+<h1 class="title">Edit Article</h1>
+<%= form_for (@article) do |f| %>
+  <p class="article-title">Title</p>
+  <%= f.text_field :title %>
+  <p class="article-content">Content</p>
+  <%= f.text_field :content %>
+  <br>
+  <br>
+  <%= f.submit 'Update article' %>
+  <br>
+<% end %>

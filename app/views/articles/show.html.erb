@@ -1,0 +1,13 @@
+<nav class="navbar navbar-light" style="background-color: #F5F5F5;">
+<p class="wiki-header"><%= link_to 'Wikinimous', articles_path %></p>
+<p class="new-article"><%= link_to 'New article', 'new'%></p>
+</nav>
+<br>
+<div class="wiki-articles col-6">
+  <h3 class="title">
+    <%= @article.title %>
+     <%= link_to '<i class="fas fa-pencil-alt fa-xs"></i>'.html_safe, "#{@article.id}/edit" %>
+    <%= link_to '<i class="far fa-trash-alt fa-xs"></i>'.html_safe, article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
+  </h3>
+  <p class="article-card"><%= @article.content %></p>
+</div>

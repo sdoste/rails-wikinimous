@@ -1,0 +1,16 @@
+<nav class="navbar navbar-light" style="background-color: #F5F5F5;">
+<p class="header"><%= link_to 'Wikinimous', articles_path %></p>
+<p class="new-article"><%= link_to 'New article', 'new'%></p>
+</nav>
+<h1 class="title">New Article</h1>
+<%= form_for (@article) do |f| %>
+  <p class="article-title">Title</p>
+  <%= f.text_field :title %>
+  <p class="article-content">Content</p>
+  <%= f.text_field :content, class: "large-box" %>
+  <br>
+  <br>
+  <%= f.submit %>
+<% end %>
+<br>
+<%= link_to 'Back to list', articles_path %>

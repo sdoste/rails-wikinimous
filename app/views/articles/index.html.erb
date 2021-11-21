@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light" style="background-color: #F5F5F5;">
+<p class="wiki-header"><%= link_to 'Wikinimous', articles_path %></p>
+<p class="new-article"><%= link_to 'New article', 'articles/new'%></p>
+</nav>
+<br>
+<div class="container rol-12 col-lg-6">
+  <ul>
+    <% @articles.each do |article| %>
+      <li>
+        <%= link_to article.title, article_path(article) %>
+      </li>
+      <li>
+        <%= article.content[0...100] %>
+      </li>
+    <% end %>
+  </ul>
+</div>
